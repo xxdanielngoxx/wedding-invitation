@@ -22,7 +22,7 @@ export default function RegistrationV2() {
 	const router = useRouter();
 
 	const notifySuccess = () => toast.success("Đăng ký thành công!");
-	const notifyError = () => toast.error("Đăng ký không thất bại!");
+	const notifyError = () => toast.error("Đăng ký thất bại!");
 
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
@@ -49,7 +49,7 @@ export default function RegistrationV2() {
 		<>
 			<form
 				onSubmit={handleSubmit}
-				className=" bg-base-200 py-6 flex flex-col justify-center sm:py-12"
+				className="bg-base-200 py-6 flex flex-col justify-center sm:py-12"
 				id="registration-form"
 			>
 				<div className="relative py-3 sm:max-w-xl sm:mx-auto">

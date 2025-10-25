@@ -28,7 +28,7 @@ export default function CountDown() {
 	const counterDays = duration.days ?? 0;
 
 	return (
-		<section className="bg-white py-8">
+		<section className="w-full py-8 bg-white ">
 			<div className="p-4 max-w-7xl flex items-center justify-center">
 				<div className="grid grid-flow-col gap-5 text-center auto-cols-max">
 					<div className="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">

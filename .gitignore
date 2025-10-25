@@ -11,5 +11,7 @@ count.txt
 .vinxi
 todos.json
 
+.env.production
+
 # Local Netlify folder
 .netlify
