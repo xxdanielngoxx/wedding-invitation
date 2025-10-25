@@ -37,6 +37,8 @@ export default function RegistrationV2() {
 				data: { name, attendance: attendance === "yes", message },
 			});
 
+			(e.target as HTMLFormElement).reset();
+
 			notifySuccess();
 		} catch (error) {
 			notifyError();

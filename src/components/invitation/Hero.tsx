@@ -39,14 +39,11 @@ export default function Hero() {
 						</div>
 					</div>
 
-					<div className="flex justify-center py-4">
+					<div className="flex justify-center py-4 pt-0">
 						<div className="text-center">
-							<p className="font-[Cormorant_Garamond] text-xl font-bold">
-								Khuya Thứ 7, ngày 08 tháng 11 năm 2025
-							</p>
-							<p className="text-sm font-light py-2">
-								Lễ nhóm họ sẽ được cử hành tại Tư Gia (xã Vọng Đông, Huyện Thoại
-								Sơn, tỉnh An Giang)
+							<p className="text-sm font-light py-2 pt-0">
+								Lễ nhóm họ sẽ được tổ chức vào tối thứ 7, ngày 08 tháng 11 năm
+								2025 tại Tư Gia (xã Vọng Đông, Huyện Thoại Sơn, tỉnh An Giang)
 							</p>
 						</div>
 					</div>
