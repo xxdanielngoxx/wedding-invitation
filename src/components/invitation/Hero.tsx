@@ -26,10 +26,10 @@ export default function Hero() {
 
 					<div className="flex justify-center py-4">
 						<div className="text-center">
-							<p className="font-[Cormorant_Garamond] font-semibold">
+							<p className="font-[Cormorant_Garamond] text-xl font-bold">
 								Chủ Nhật, 09 tháng 11 năm 2025
 							</p>
-							<p className="font-[Cormorant_Garamond] font-semibold">
+							<p className="font-[Cormorant_Garamond] text-xl font-bold">
 								9 giờ 00
 							</p>
 							<p className="text-sm font-light py-2">
