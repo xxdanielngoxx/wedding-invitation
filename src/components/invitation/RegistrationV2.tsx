@@ -1,12 +1,11 @@
-import { useRouter } from "@tanstack/react-router";
-import { createServerFn } from "@tanstack/react-start";
+import { createServerFn, useServerFn } from "@tanstack/react-start";
 import { MessageCircleHeart } from "lucide-react";
 import toast, { Toaster } from "react-hot-toast";
 import { prisma } from "@/db";
 
 type Attendance = "yes" | "no";
 
-const createRegistration = createServerFn({
+const createRegistrationServerFn = createServerFn({
 	method: "POST",
 })
 	.inputValidator(
@@ -19,7 +18,7 @@ const createRegistration = createServerFn({
 	});
 
 export default function RegistrationV2() {
-	const router = useRouter();
+	const createRegistration = useServerFn(createRegistrationServerFn);
 
 	const notifySuccess = () => toast.success("Đăng ký thành công!");
 	const notifyError = () => toast.error("Đăng ký thất bại!");
