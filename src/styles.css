@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;600;700&family=Quicksand:wght@400;500;600&display=swap");
+@import "tailwindcss";
+
+@plugin "daisyui" {
+	themes:
+		light --default,
+		dark --prefersdark,
+		cupcake;
+}
+
+.custom-divider {
+	width: 100px;
+	height: 2px;
+	background: linear-gradient(90deg, transparent, #d4a5a5, transparent);
+	margin-left: auto;
+	margin-right: auto;
+}
