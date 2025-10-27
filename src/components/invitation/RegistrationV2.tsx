@@ -1,5 +1,6 @@
 import { createServerFn, useServerFn } from "@tanstack/react-start";
 import { MessageCircleHeart } from "lucide-react";
+import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { prisma } from "@/db";
 
@@ -20,29 +21,44 @@ const createRegistrationServerFn = createServerFn({
 export default function RegistrationV2() {
 	const createRegistration = useServerFn(createRegistrationServerFn);
 
+	const [disabled, setDisabled] = useState(false);
+
 	const notifySuccess = () => toast.success("Đăng ký thành công!");
-	const notifyError = () => toast.error("Đăng ký thất bại!");
+	const notifyError = (message: string) => toast.error(message);
+	const notifyLoading = () => toast.loading("Đang đăng ký...");
 
 	const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+
 		const formData = new FormData(e.target as HTMLFormElement);
 		const name = formData.get("name") as string;
 		const attendance = formData.get("attendance") as Attendance;
 		const message = formData.get("message") as string;
 
-		if (!name || !attendance || !message) return;
+		if (!name || !attendance || !message) {
+			notifyError("Vui lòng điền đủ thông tin!");
+			return;
+		}
+
+		const loadingToastId = notifyLoading();
 
 		try {
+			setDisabled(true);
+
 			await createRegistration({
 				data: { name, attendance: attendance === "yes", message },
 			});
-
 			(e.target as HTMLFormElement).reset();
 
+			toast.dismiss(loadingToastId);
 			notifySuccess();
 		} catch (error) {
-			notifyError();
+			toast.dismiss(loadingToastId);
+			notifyError("Đăng ký thất bại!");
 			console.error("Failed to create registration:", error);
+		} finally {
+			toast.dismiss(loadingToastId);
+			setDisabled(false);
 		}
 	};
 
@@ -128,6 +144,7 @@ export default function RegistrationV2() {
 									<button
 										className="btn btn-lg btn-accent btn-wide"
 										type="submit"
+										disabled={disabled}
 									>
 										Hoàn thành
 									</button>
