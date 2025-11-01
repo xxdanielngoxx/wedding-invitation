@@ -14,7 +14,7 @@ function App() {
 			<Hero></Hero>
 			<CountDown></CountDown>
 			<Album></Album>
-			<RegistrationV2></RegistrationV2>
+			{/* <RegistrationV2></RegistrationV2> */}
 		</div>
 	);
 }

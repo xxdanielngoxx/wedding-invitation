@@ -57,7 +57,7 @@ export default function Hero() {
 						</p>
 					</div>
 
-					<div className="flex w-full flex-col lg:flex-row py-6">
+					{/* <div className="flex w-full flex-col lg:flex-row py-6">
 						<Link to="/" hash="registration-form" className="text-center">
 							<button className="btn btn-lg btn-accent py-4" type="button">
 								Đăng ký tham dự hôn lễ{" "}
@@ -66,7 +66,7 @@ export default function Hero() {
 								</span>
 							</button>
 						</Link>
-					</div>
+					</div> */}
 				</div>
 			</div>
 		</div>
